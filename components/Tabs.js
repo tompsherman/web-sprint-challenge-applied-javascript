@@ -21,14 +21,9 @@ function tabMaker(array) {
   array.forEach((element) => {
     let newEl = document.createTextNode(element);
 
-    const item = document.createElement("div");
-
-    tabs.appendChild(item);
-    item.appendChild(newEl);
-
+    tabs.appendChild(newEl);
     tabContainer.appendChild(tabs);
   });
-
   return tabs;
 }
 

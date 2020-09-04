@@ -4,7 +4,7 @@ axios
   .get("https://lambda-times-api.herokuapp.com/articles")
   .then((response) => {
     // let articlePub = getArticle(response.data.articles.javascript);
-    debugger;
+
     let jsArray = Array.from(response.data.articles.javascript);
 
     jsArray.forEach((element) => {
@@ -40,13 +40,13 @@ axios
       cardEntry.appendChild(published);
     });
 
-    console.log(Array.from(response.data.articles.bootstrap));
+    // console.log(Array.from(response.data.articles.bootstrap));
 
-    console.log(Array.from(response.data.articles.technology));
+    // console.log(Array.from(response.data.articles.technology));
 
-    console.log(Array.from(response.data.articles.jquery));
+    // console.log(Array.from(response.data.articles.jquery));
 
-    console.log(Array.from(response.data.articles.node));
+    // console.log(Array.from(response.data.articles.node));
 
     // cardEntry.appendChild(articlePub);
   })
@@ -102,7 +102,9 @@ function getArticle(object) {
   newImage.style.width = "100%";
   newByLine.textContent = `By: ${object.authorName}`;
 
-  newCard.addEventListener("click", console.log(newHeadline));
+  newCard.addEventListener("click", (event) => {
+    console.log(newHeadline);
+  });
 
   return newCard;
 }
