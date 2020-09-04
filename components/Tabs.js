@@ -3,8 +3,9 @@ import axios from "axios";
 axios
   .get("https://lambda-times-api.herokuapp.com/topics")
   .then((response) => {
+    debugger;
     let newTabs = tabMaker(response.data.topics);
-    // console.log(response.data.topics);
+    console.log(newTabs);
     tabContainer.appendChild(newTabs);
   })
   .catch((err) => {
@@ -20,8 +21,10 @@ function tabMaker(array) {
 
   array.forEach((element) => {
     let newEl = document.createTextNode(element);
+    const item = document.createElement("ul");
+    tabs.appendChild(item);
+    item.appendChild(newEl);
 
-    tabs.appendChild(newEl);
     tabContainer.appendChild(tabs);
   });
   return tabs;
