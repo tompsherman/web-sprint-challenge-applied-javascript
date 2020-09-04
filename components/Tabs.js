@@ -3,9 +3,10 @@ import axios from "axios";
 axios
   .get("https://lambda-times-api.herokuapp.com/topics")
   .then((response) => {
-    let newTabs = tabMaker(response.data.topics);
-    console.log(newTabs);
-    tabContainer.appendChild(newTabs);
+    // debugger;
+    tabMaker(response.data.topics);
+    // console.log(newTabs);
+    // tabContainer.appendChild(newTabs);
   })
   .catch((err) => {
     console.log("TABS ERROR! TABS ERROR! TABS ERROR!");
@@ -24,8 +25,9 @@ function tabMaker(array) {
     tabs.appendChild(newEl);
 
     tabContainer.appendChild(tabs);
+    console.log(tabs);
+    return tabs;
   });
-  return tabs;
 }
 
 // STEP 2: Create tabs
