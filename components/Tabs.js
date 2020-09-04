@@ -8,7 +8,7 @@ axios
     tabContainer.appendChild(newTabs);
   })
   .catch((err) => {
-    console.log("ERROR! ERROR! ERROR!");
+    console.log("TABS ERROR! TABS ERROR! TABS ERROR!");
   });
 
 const tabContainer = document.querySelector(".topics");
